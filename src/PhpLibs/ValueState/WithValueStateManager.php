@@ -42,9 +42,34 @@ trait WithValueStateManager
      *
      * @return int ValueStateType Id
      */
-    public function getValueState(string $valueKey): int
+    public function getValueState(string $fieldKey): int
     {
-        return $this->getValueStateManager()->getValueState($valueKey);
+        return $this->getValueStateManager()->getValueState($fieldKey);
+    }
+
+    /**
+     * True once a value is initialized, and continues to be true after a value is modified
+     *
+     * @param string $fieldKey
+     *
+     * @return bool
+     */
+    public function getValueWasInitialized(string $fieldKey): bool
+    {
+        $valueState = $this->getValueStateManager()->getValueState($fieldKey);
+        return ValueStateTypes::INITIALIZED_ID === $valueState || ValueStateTypes::MODIFIED_ID === $valueState;
+    }
+
+    /**
+     * True only if a value was changed after it was initialized
+     *
+     * @param string $fieldKey
+     *
+     * @return bool
+     */
+    public function getValueIsModified(string $fieldKey): bool
+    {
+        return ValueStateTypes::MODIFIED_ID === $this->getValueStateManager()->getValueState($fieldKey);
     }
 
     protected function bindValueChangeStateTracking() : void
