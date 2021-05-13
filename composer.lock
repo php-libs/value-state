@@ -1,0 +1,55 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "813fe3cf2425394e8bb7ea97e184215f",
+    "packages": [
+        {
+            "name": "php-libs/observable",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-libs/observable.git",
+                "reference": "68efabfa33f9bbe1e25e1b7c95e6bcd7fc5b62c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-libs/observable/zipball/68efabfa33f9bbe1e25e1b7c95e6bcd7fc5b62c5",
+                "reference": "68efabfa33f9bbe1e25e1b7c95e6bcd7fc5b62c5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpLibs\\Observable\\": "src/PhpLibs/Observable"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Provides clases to simplify observer pattern implementation",
+            "support": {
+                "issues": "https://github.com/php-libs/observable/issues",
+                "source": "https://github.com/php-libs/observable/tree/1.0"
+            },
+            "time": "2021-05-06T20:42:12+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^8.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}

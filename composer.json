@@ -1,0 +1,16 @@
+{
+    "name": "php-libs/value-states",
+    "description": "Extends php-libs/observer to track if a values have been initialized or modified (changed after initialization)",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "PhpLibs\\ValueState\\": "src/PhpLibs/ValueState"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "php-libs/observable": "^1.0"
+    }
+}
