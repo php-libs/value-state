@@ -19,7 +19,7 @@ trait WithValueStateManager
      */
     public function getValueStateManager(): ValueStateManager
     {
-        return $this->_valueStateManager ?? new ValueStateManager();
+        return $this->_valueStateManager ??= new ValueStateManager();
     }
 
     /**
@@ -32,7 +32,7 @@ trait WithValueStateManager
      */
     public function getTrackedValueStates() : array
     {
-        $this->getValueStateManager()->getTrackedValueStates();
+        return $this->getValueStateManager()->getTrackedValueStates();
     }
 
     /**
