@@ -2,7 +2,7 @@
 
 namespace PhpLibs\ValueState;
 
-
+use PhpLibs\Observable\Observable;
 
 trait WithValueStates
 {
