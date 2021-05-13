@@ -56,8 +56,7 @@ trait WithValueStateManager
      */
     public function getValueWasInitialized(string $fieldKey): bool
     {
-        $valueState = $this->getValueStateManager()->getValueState($fieldKey);
-        return ValueStateTypes::INITIALIZED_ID === $valueState || ValueStateTypes::MODIFIED_ID === $valueState;
+        return $this->getValueStateManager()->getValueWasInitialized($fieldKey);
     }
 
     /**
@@ -69,7 +68,7 @@ trait WithValueStateManager
      */
     public function getValueIsModified(string $fieldKey): bool
     {
-        return ValueStateTypes::MODIFIED_ID === $this->getValueStateManager()->getValueState($fieldKey);
+        return $this->getValueStateManager()->getValueIsModified($fieldKey);
     }
 
     protected function bindValueChangeStateTracking() : void

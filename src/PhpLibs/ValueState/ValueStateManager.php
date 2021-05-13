@@ -4,36 +4,12 @@
 namespace PhpLibs\ValueState;
 
 
-class ValueStateManager
+class ValueStateManager implements ValueStateProviderInterface
 {
     /**
      * @var int[] fieldKey => ValueStateType id
      */
     private array $trackedValueStates = [];
-
-    /**
-     * An item is considered initialized once an assignment has taken place
-     *
-     * @param string $fieldKey
-     *
-     * @return bool
-     */
-    public function isInitialized(string $fieldKey) : bool
-    {
-        return ValueStateTypes::INITIALIZED_ID === $this->getValueState($fieldKey);
-    }
-
-    /**
-     * Any item that is modified is also considered to be initialized
-     *
-     * @param string $fieldKey
-     *
-     * @return bool
-     */
-    public function isModified(string $fieldKey) : bool
-    {
-        return ValueStateTypes::MODIFIED_ID === $this->getValueState($fieldKey);
-    }
 
     /**
      * fieldKey => ValueStateType id
@@ -62,6 +38,39 @@ class ValueStateManager
         }
 
         return $this->trackedValueStates[$fieldKey];
+    }
+
+    /**
+     * True once a value is initialized, and continues to be true after a value is modified
+     *
+     * @param string $fieldKey
+     *
+     * @return bool
+     */
+    public function getValueWasInitialized(string $fieldKey): bool
+    {
+        if (!array_key_exists($fieldKey, $this->trackedValueStates)) {
+            return false;
+        }
+
+        return ValueStateTypes::INITIALIZED_ID === $this->trackedValueStates[$fieldKey]
+            || ValueStateTypes::MODIFIED_ID === $this->trackedValueStates[$fieldKey];
+    }
+
+    /**
+     * True only if a value was changed after it was initialized
+     *
+     * @param string $fieldKey
+     *
+     * @return bool
+     */
+    public function getValueIsModified(string $fieldKey): bool
+    {
+        if (!array_key_exists($fieldKey, $this->trackedValueStates)) {
+            return false;
+        }
+
+        return ValueStateTypes::MODIFIED_ID === $this->trackedValueStates[$fieldKey];
     }
 
     public function onBeforeAssignment(object $sourceObject, string $fieldKey, mixed $currentValue, mixed $newValue)
