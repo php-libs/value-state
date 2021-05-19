@@ -11,6 +11,6 @@
     },
     "require": {
         "php": "^8.0",
-        "php-libs/observable": "^1.0"
+        "php-libs/observable": "^1.3"
     }
 }

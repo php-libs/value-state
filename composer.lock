@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "813fe3cf2425394e8bb7ea97e184215f",
+    "content-hash": "899a42deb3ed79a98b586934a44b9b31",
     "packages": [
         {
             "name": "php-libs/observable",
-            "version": "1.0",
+            "version": "1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-libs/observable.git",
-                "reference": "68efabfa33f9bbe1e25e1b7c95e6bcd7fc5b62c5"
+                "reference": "0f6b33db27228c7800556a2c11e1ca7a7c80871e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-libs/observable/zipball/68efabfa33f9bbe1e25e1b7c95e6bcd7fc5b62c5",
-                "reference": "68efabfa33f9bbe1e25e1b7c95e6bcd7fc5b62c5",
+                "url": "https://api.github.com/repos/php-libs/observable/zipball/0f6b33db27228c7800556a2c11e1ca7a7c80871e",
+                "reference": "0f6b33db27228c7800556a2c11e1ca7a7c80871e",
                 "shasum": ""
             },
             "require": {
@@ -36,9 +36,9 @@
             "description": "Provides clases to simplify observer pattern implementation",
             "support": {
                 "issues": "https://github.com/php-libs/observable/issues",
-                "source": "https://github.com/php-libs/observable/tree/1.0"
+                "source": "https://github.com/php-libs/observable/tree/1.3"
             },
-            "time": "2021-05-06T20:42:12+00:00"
+            "time": "2021-05-19T07:15:17+00:00"
         }
     ],
     "packages-dev": [],
